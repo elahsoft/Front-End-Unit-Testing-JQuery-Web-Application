@@ -1,0 +1,60 @@
+{
+  "Computer": {
+    "course2L": {
+      "1": {
+        "code": "CSC201",
+        "title": "Introduction to Java Programming",
+        "units": "3",
+        "semester": "Rain"
+      },
+      "2": {
+        "code": "CSC202",
+        "title": "Introduction to Systems Programming",
+        "units": "4",
+        "semester":"Rain"
+      },
+      "3": {
+        "code": "MTH201",
+        "title": "Mathematical Methods 1",
+        "units": "3",
+        "semester": "Rain"
+      },
+      "4": {
+        "code": "MTH203",
+        "title": "Operations Research 1",
+        "units": "3",
+        "semester": "Rain"
+      },
+      "5": {
+        "code": "MTH204",
+        "title": "Real Analysis 1",
+        "units": "3",
+        "semester": "Rain"
+      },
+      "6": {
+        "code": "CSC205",
+        "title": "Introduction to Compiler Construction",
+        "units": "4",
+        "semester": "Rain"
+      },
+      "7": {
+        "code": "CSC206",
+        "title": "Survey of Programming Languages",
+        "units": "3",
+        "semester": "Rain"
+      },
+      "8": {
+        "code": "CSC207",
+        "title": "Databases 1",
+        "units": "3",
+        "semester": "Rain"
+      },
+      "9": {
+        "code": "MTH207",
+        "title": "Numerical Analysis",
+        "units": "3",
+        "semester": "Harmattan"
+      }
+    }
+  }
+}

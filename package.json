@@ -1,0 +1,49 @@
+{
+  "name": "basicut",
+  "version": "1.0.0",
+  "description": "An Angular Application that demonstrates how to use karma and jasmine for front-end unit testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start && gulp",
+    "specRunner": "gulp",
+    "karmaTest": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elahsoft/Front-End-Unit-Testing-JQuery-Web-Application.gi
+t"
+  },
+  "keywords": [
+    "angularjs",
+    "karma",
+    "jasmine",
+    "testing",
+    "front-end"
+  ],
+  "author": "OPARA FEBECHUKWU CHINONYEREM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elahsoft/Front-End-Unit-Testing--Karma-Jasmine-Angular/issues"
+  },
+  "homepage": "https://github.com/elahsoft/Front-End-Unit-Testing--Karma-Jasmine-Angular#readme",
+  "devDependencies": {
+    "brfs": "^1.4.3",
+    "browserify": "^14.1.0",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "jasmine-core": "^2.5.2",
+    "jasmine-jquery": "^2.1.1",
+    "karma": "^1.5.0",
+    "karma-browserify": "^5.1.1",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-firefox-launcher": "^1.0.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.9.0"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "underscore": "^1.8.3"
+  }
+}
