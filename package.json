@@ -10,8 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/elahsoft/Front-End-Unit-Testing-JQuery-Web-Application.gi
-t"
+    "url": "git+https://github.com/elahsoft/Front-End-Unit-Testing-JQuery-Web-Application.git"
   },
   "keywords": [
     "angularjs",
@@ -27,6 +26,8 @@ t"
   },
   "homepage": "https://github.com/elahsoft/Front-End-Unit-Testing--Karma-Jasmine-Angular#readme",
   "devDependencies": {
+    "babel-loader": "^6.4.1",
+    "babelify": "^7.3.0",
     "brfs": "^1.4.3",
     "browserify": "^14.1.0",
     "gulp": "^3.9.1",

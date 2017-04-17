@@ -15,8 +15,9 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'src/*.js',
-      'spec/*Spec.js',
+      'node_modules/underscore/underscore.js',
+      'src/*.1.js',
+      'spec/*Spec2.js',
       'node_modules/jquery/dist/jquery.js',
       'node_modules/jasmine-jquery/lib/jasmine-jquery.js'
     ],
@@ -29,14 +30,14 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'spec/*Spec.js': [ 'browserify' ]
+      'spec/*Spec2.js': [ 'browserify' ]
     },
 
     // add additional browserify configuration properties here
     // such as transform and/or debug=true to generate source maps
     browserify: {
       debug: true,
-      transform: [ 'brfs' ],
+      transform: ['brfs'],
       configure: function(bundle) {
         bundle.on('prebundle', function() {
           bundle.external('CGPASpec');
@@ -60,7 +61,7 @@ module.exports = function(config) {
 
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_INFO,
+    logLevel: config.LOG_ERROR,
 
 
     // enable / disable watching file and executing tests whenever any file changes

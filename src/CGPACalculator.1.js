@@ -1,14 +1,9 @@
-/**
- * CGPA Calculator class
- * @class {CGPACalculator}
- */
-class CGPACalculator {
 
   /**
    * Create a CGPACalculator.
    * @constructor
    */
-  constructor() {
+  function CGPACalculator() {
     this.surname = "";
     this.firstName = "";
     this.middleName = "";
@@ -33,7 +28,7 @@ class CGPACalculator {
    * @param {object} courses
    * @returns {boolean} returns boolean
    */
-  isEmptyCourses(courses) {
+  CGPACalculator.prototype.isEmptyCourses = function(courses) {
     var status = true;
     if (this.isObject(courses)) {
       if (Object.keys(courses).length > 0) {
@@ -52,7 +47,7 @@ class CGPACalculator {
      * @param {object} courses
      * @returns {boolean} returns boolean
      */
-  isObject(courses) {
+  CGPACalculator.prototype.isObject = function(courses) {
     var status = false;
     if (Object.prototype.toString.call(courses) === '[object Object]') {
       status = true;
@@ -69,7 +64,7 @@ class CGPACalculator {
      * @param {object} courses
      * @returns {boolean} returns boolean
      */
-  isWellFormattedCourses(courses) {
+  CGPACalculator.prototype.isWellFormattedCourses = function(courses) {
     var status = false;
     var keys = ['code', 'title', 'units', 'semester'];
     _.each(courses, function (department, key) {
@@ -98,7 +93,7 @@ class CGPACalculator {
      * @param {String} grade
      * @returns {number} returns point computed
      */
-  computePoint(unit, grade) {
+  CGPACalculator.prototype.computePoint = function(unit, grade) {
     var gradeValue = this.evaluateGrade(grade);
     var point =  gradeValue * unit;
     return point;
@@ -112,7 +107,7 @@ class CGPACalculator {
      * @param {String} grade
      * @returns {number} returns point equivalence of grade
      */
-  evaluateGrade(grade) {
+  CGPACalculator.prototype.evaluateGrade = function(grade) {
     return this.gradeSystem[grade];
   }
 
@@ -125,7 +120,7 @@ class CGPACalculator {
      * @param {Array} points
      * @returns {number} returns total of points
      */
-  computeTotalPoint(points) {
+  CGPACalculator.prototype.computeTotalPoint = function(points) {
     for (var i = 0; i < points.length; i++) {
       this.totalPoints = this.totalPoints + points[i];
     }
@@ -148,7 +143,7 @@ class CGPACalculator {
      * @param {Object} courses
      * @returns {void} returns nothing
      */
-  startComputation(surname, firstName, middleName, registrationNumber, level, courseOfStudy, semester, courses, grades) {
+  CGPACalculator.prototype.startComputation = function(surname, firstName, middleName, registrationNumber, level, courseOfStudy, semester, courses, grades) {
     this.surname = surname;
     this.firstName = firstName;
     this.middleName = middleName;
@@ -188,7 +183,7 @@ class CGPACalculator {
      * @param {void} 
      * @returns {void} returns nothing
      */
-    enableLoadCourses() {
+    CGPACalculator.prototype.enableLoadCourses = function() {
       $('#loadCourses').removeAttr('disabled');
     }
 
@@ -201,7 +196,7 @@ class CGPACalculator {
      * @param {courses} all courses object
      * @returns {void} returns nothing
      */
-    showCourseDetails(courses) {
+    CGPACalculator.prototype.showCourseDetails = function(courses) {
       var dept = $('#courseOfStudy').val();
       var studentLevel = $('#level').val();
       var semester = $('#semester').val();
@@ -239,7 +234,7 @@ class CGPACalculator {
      * @param {void} 
      * @returns {void} returns nothing
      */
-    showInputTable() {
+    CGPACalculator.prototype.showInputTable = function() {
       $('#table').show();
     }
 
@@ -251,7 +246,7 @@ class CGPACalculator {
      * @param {score} number
      * @returns {number} returns grade
      */
-    evaluateScore(score) {
+    CGPACalculator.prototype.evaluateScore = function(score) {
       var grade = "";
       if (score >= 70 && score <= 100) {
         grade = 'A';
@@ -282,7 +277,7 @@ class CGPACalculator {
      * @param {void}
      * @returns {void}
      */
-    showGrade1() {
+    CGPACalculator.prototype.showGrade1 = function() {
       var grade1 = document.getElementById('score1').value;
       var unit = document.getElementById('units1').value;
       var grade = this.evaluateScore(grade1);
@@ -294,7 +289,7 @@ class CGPACalculator {
       this.showPoint(point, '#points1');
     }
 
-    showGrade2() {
+    CGPACalculator.prototype.showGrade2 = function() {
       var grade2 = document.getElementById('score2').value;
       var unit = document.getElementById('units2').value;
       var grade = this.evaluateScore(grade2);
@@ -306,7 +301,7 @@ class CGPACalculator {
       this.showPoint(point, '#points2');
     }
 
-    showGrade3() {
+    CGPACalculator.prototype.showGrade3 = function() {
       var grade3 = document.getElementById('score3').value;
       var unit = document.getElementById('units3').value;
       var grade = this.evaluateScore(grade3);
@@ -318,7 +313,7 @@ class CGPACalculator {
       this.showPoint(point, '#points3');
     }
 
-    showGrade4() {
+    CGPACalculator.prototype.showGrade4 = function() {
       var grade4 = document.getElementById('score4').value;
       var unit = document.getElementById('units4').value;
       var grade = this.evaluateScore(grade4);
@@ -330,7 +325,7 @@ class CGPACalculator {
       this.showPoint(point, '#points4');
     }
 
-    showGrade5() {
+    CGPACalculator.prototype.showGrade5 = function() {
       var grade5 = document.getElementById('score5').value;
       var unit = document.getElementById('units5').value;
       var grade = this.evaluateScore(grade5);
@@ -342,7 +337,7 @@ class CGPACalculator {
       this.showPoint(point, '#points5');
     }
 
-    showGrade6() {
+    CGPACalculator.prototype.showGrade6 = function() {
       var grade6 = document.getElementById('score6').value;
       var unit = document.getElementById('units6').value;
       var grade = this.evaluateScore(grade6);
@@ -354,7 +349,7 @@ class CGPACalculator {
       this.showPoint(point, '#points6');
     }
 
-    showGrade7() {
+    CGPACalculator.prototype.showGrade7 = function() {
       var grade7 = document.getElementById('score7').value;
       var unit = document.getElementById('units7').value;
       var grade = this.evaluateScore(grade7);
@@ -366,7 +361,7 @@ class CGPACalculator {
       this.showPoint(point, '#points7');
     }
 
-    showGrade8() {
+    CGPACalculator.prototype.showGrade8 = function() {
       var grade8 = document.getElementById('score8').value;
       var unit = document.getElementById('units8').value;
       var grade = this.evaluateScore(grade8);
@@ -389,7 +384,7 @@ class CGPACalculator {
      * @param {void}
      * @returns {void}
      */
-    showPoint(point, elementId) {
+    CGPACalculator.prototype.showPoint = function(point, elementId) {
       this.points.push(point);
       $(elementId).val(point);
     }
@@ -403,7 +398,7 @@ class CGPACalculator {
      * @param {void}
      * @returns {void}
      */
-    computeTotalUnits() {
+    CGPACalculator.prototype.computeTotalUnits = function() {
       for (var i=0; i<this.units.length; i++) {
         this.totalUnits = this.totalUnits + this.units[i];
       }
@@ -418,7 +413,7 @@ class CGPACalculator {
      * @param {void}
      * @returns {void}
      */
-    computeCGPA() {
+    CGPACalculator.prototype.computeCGPA = function() {
       this.totalUnits = this.computeTotalUnits();
       this.cgpa = this.totalPoints / this.totalUnits;
       this.showCGPA();
@@ -434,7 +429,7 @@ class CGPACalculator {
      * @param {void}
      * @returns {void}
      */
-    showCGPA() {
+    CGPACalculator.prototype.showCGPA = function() {
       $('#cgpa').val(this.cgpa);
     }
 
@@ -447,9 +442,8 @@ class CGPACalculator {
      * @param {void}
      * @returns {void}
      */
-    showTotalPoints() {
+    CGPACalculator.prototype.showTotalPoints = function() {
       $('#total').val(this.totalPoints);
     }
-  }
 
 // export default CGPACalculator;
